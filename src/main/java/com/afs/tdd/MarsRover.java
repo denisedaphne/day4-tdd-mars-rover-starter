@@ -12,9 +12,7 @@ public class MarsRover {
 
     public void executeCommand(Command givenCommand) {
         if(givenCommand == Command.MOVE) {
-            if(location.getDirection() == Direction.NORTH){
-                location.setY(location.getY() + 1);
-            }
+            move();
         } else if (givenCommand == Command.TURN_LEFT) {
             turnLeft();
         } else if (givenCommand == Command.TURN_RIGHT) {
@@ -22,6 +20,22 @@ public class MarsRover {
         }
     }
 
+    private void move() {
+        switch (location.getDirection()) {
+            case NORTH:
+                location.setY(location.getY() + 1);
+                break;
+            case EAST:
+                location.setX(location.getX() + 1);
+                break;
+            case SOUTH:
+                location.setY(location.getY() - 1);
+                break;
+            case WEST:
+                location.setX(location.getX() - 1);
+                break;
+        }
+    }
 
     private void turnRight() {
         switch (location.getDirection()) {
