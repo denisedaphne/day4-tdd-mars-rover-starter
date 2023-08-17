@@ -1,11 +1,18 @@
 package com.afs.tdd;
 
+<<<<<<< HEAD
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class MarsRoverTest {
 
+=======
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+class MarsRoverTest {
+>>>>>>> 92538cb88936d9dc581d65daad243ee2bf512a54
     @Test
     void should_change_to_location_0_1_N_when_executeCommand_given_0_0_North_and_command_Move() {
         // Given
@@ -16,6 +23,7 @@ public class MarsRoverTest {
         marsRover.executeCommand(givenCommand);
         Location currentLocation = marsRover.getCurrentLocation();
         // Then
+<<<<<<< HEAD
         Assertions.assertEquals(0, currentLocation.getX());
         Assertions.assertEquals(1, currentLocation.getY());
         Assertions.assertEquals(Direction.NORTH, currentLocation.getDirection());
@@ -205,4 +213,10 @@ public class MarsRoverTest {
         Assertions.assertEquals(Direction.EAST, currentLocation.getDirection());
     }
 
+=======
+        Assertions.assertEquals(0 , currentLocation.getX());
+        Assertions.assertEquals(1 , currentLocation.getY());
+        Assertions.assertEquals(Direction.NORTH , currentLocation.getDirection());
+    }
+>>>>>>> 92538cb88936d9dc581d65daad243ee2bf512a54
 }
