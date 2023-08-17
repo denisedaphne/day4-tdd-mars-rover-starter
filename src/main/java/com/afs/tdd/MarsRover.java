@@ -20,7 +20,10 @@ public class MarsRover {
         }
     }
 
-    public void executeBatchCommands(Command[] givenCommands) {
+    public void executeBatchCommands(Command[] commands) {
+        for (Command command : commands) {
+            executeCommand(command);
+        }
     }
 
     private void move() {
