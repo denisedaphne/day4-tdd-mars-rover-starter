@@ -173,4 +173,19 @@ class MarsRoverTest {
         Assertions.assertEquals(Direction.WEST, currentLocation.getDirection());
     }
 
+    @Test
+    void should_change_to_location_1_0_N_when_executeBatchCommands_given_0_0_North_and_commands_Move_Move() {
+        // Given
+        Location initialLocation = new Location(0, 0, Direction.NORTH);
+        Command[] givenCommands = { Command.MOVE, Command.MOVE };
+        MarsRover marsRover = new MarsRover(initialLocation);
+        // When
+        marsRover.executeBatchCommands(givenCommands);
+        Location currentLocation = marsRover.getCurrentLocation();
+        // Then
+        Assertions.assertEquals(0, currentLocation.getX());
+        Assertions.assertEquals(2, currentLocation.getY());
+        Assertions.assertEquals(Direction.NORTH, currentLocation.getDirection());
+    }
+
 }

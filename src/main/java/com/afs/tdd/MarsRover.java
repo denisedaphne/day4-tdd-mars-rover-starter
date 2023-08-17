@@ -20,6 +20,9 @@ public class MarsRover {
         }
     }
 
+    public void executeBatchCommands(Command[] givenCommands) {
+    }
+
     private void move() {
         switch (location.getDirection()) {
             case NORTH:
@@ -74,4 +77,5 @@ public class MarsRover {
     public Location getCurrentLocation() {
         return location;
     }
+
 }
