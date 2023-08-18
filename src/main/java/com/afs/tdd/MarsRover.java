@@ -1,6 +1,7 @@
 package com.afs.tdd;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class MarsRover {
 
@@ -20,8 +21,8 @@ public class MarsRover {
         }
     }
 
-    public void executeBatchCommands(Command[] commands) {
-        Arrays.stream(commands).forEach(this::executeCommand);
+    public void executeBatchCommands(List<Command> commandList) {
+        commandList.forEach(this::executeCommand);
     }
 
     private void move() {

@@ -3,6 +3,9 @@ package com.afs.tdd;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+import java.util.List;
+
 class MarsRoverTest {
     private MarsRover getMarsRover(Direction direction) {
         Location initialLocation = new Location(0, 0, direction);
@@ -160,7 +163,7 @@ class MarsRoverTest {
     @Test
     void should_change_to_location_1_0_N_when_executeBatchCommands_given_0_0_North_and_commands_Move_Move() {
         MarsRover marsRover = getMarsRover( Direction.NORTH);
-        Command[] givenCommands = { Command.MOVE, Command.MOVE };
+        List<Command> givenCommands = Arrays.asList(Command.MOVE, Command.MOVE);
 
         marsRover.executeBatchCommands(givenCommands);
         Location currentLocation = marsRover.getCurrentLocation();
@@ -173,7 +176,7 @@ class MarsRoverTest {
     @Test
     void should_change_to_location_1_1_E_when_executeBatchCommands_given_0_0_North_and_commands_Move_TurnRight_Move() {
         MarsRover marsRover = getMarsRover( Direction.NORTH);
-        Command[] givenCommands = { Command.MOVE, Command.TURN_RIGHT, Command.MOVE };
+        List<Command> givenCommands = Arrays.asList(Command.MOVE, Command.TURN_RIGHT, Command.MOVE);
 
         marsRover.executeBatchCommands(givenCommands);
         Location currentLocation = marsRover.getCurrentLocation();
